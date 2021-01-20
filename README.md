@@ -3,6 +3,15 @@
 
 Librarie PHP care permite validarea si extragerea de informatii din CNP.
 
+
+# Instalare
+
+Folosind Composer:
+
+```
+composer require cpana/cnp
+```
+
 # Utilizare
 
 In folderul src/Examples gasiti cateva exemple de utilizare.
@@ -34,8 +43,12 @@ use CPANA\CNP\Exception\CNPExceptionInterface;
 ...
 try {
     $cnpObj = new CodNumericPersonal($inputString);
-} catch (InvalidCNPLengthCNPException | NonNumericValueCNPException $e) {
+} catch (InvalidCNPLengthCNPException $e) {
     // Ex: Display message to user
+    
+} catch (NonNumericValueCNPException $e) {
+    // Ex: Display message to user
+    
 } catch (GenericInvalidCNPException $e) {
     $code = $e->getCode();
     // take decision based on error code
