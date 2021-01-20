@@ -21,7 +21,7 @@ La instantierea clasei CodNumericPersonal se trimite ca parametru sirul de carac
 Daca nu este un CNP valid o exceptie care implementeaza interfata CPANA\CNP\Exception\CNPExceptionInterface va fi aruncata.
 ```php
 use CPANA\CNP\CodNumericPersonal;
-use CPANA\CNP\Exception\GenericInvalidCNPException;
+use CPANA\CNP\Exception\CNPExceptionInterface;
 
 ...
 try {
