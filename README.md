@@ -3,7 +3,7 @@
 
 Librarie PHP care permite validarea si extragerea de informatii din CNP.
 
-#Utilizare
+# Utilizare
 
 In folderul src/Examples gasiti cateva exemple de utilizare.
 
@@ -64,7 +64,7 @@ try {
 
 ```
 
-#Testare automata
+# Testare automata
 
 Rulare teste automate:
 ```
