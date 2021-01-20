@@ -17,6 +17,9 @@ try {
 } catch (CNPExceptionInterface $e) {
     // Display error to user in order to fix issue
     echo $e->getMessage().PHP_EOL;
+    die();
 } catch (\Exception $e) {
     echo  $e->getMessage().' '.$e->getTraceAsString();
+    die();
 }
+echo "CNP Valid".PHP_EOL;
