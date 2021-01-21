@@ -53,22 +53,22 @@ try {
     $code = $e->getCode();
     // take decision based on error code
     switch ($code) {
-            case GenericInvalidCNPException::EXCEPTION_COUNTY:
-                // take some action like  highlight wrong digits for country JJ
-                echo 'Error code:'.$e->getCode().' '.$e->getMessage().PHP_EOL;
-                break;
-            case GenericInvalidCNPException::EXCEPTION_GENDER:
-                // take some specific action ..
-                break;
-            case GenericInvalidCNPException::EXCEPTION_YEAR:
-                // take some specific action ..
-                break;
-            case GenericInvalidCNPException::EXCEPTION_MONTH:
-                // take some specific action ..
-            case GenericInvalidCNPException::EXCEPTION_DAY:
+        case GenericInvalidCNPException::EXCEPTION_COUNTY:
+            // take some action like  highlight wrong digits for county JJ
+            echo 'Error code:'.$e->getCode().' '.$e->getMessage().PHP_EOL;
+            break;
+        case GenericInvalidCNPException::EXCEPTION_GENDER:
             // take some specific action ..
-                break;
-        }
+            break;
+        case GenericInvalidCNPException::EXCEPTION_YEAR:
+            // take some specific action ..
+            break;
+        case GenericInvalidCNPException::EXCEPTION_MONTH:
+            // take some specific action ..
+        case GenericInvalidCNPException::EXCEPTION_DAY:
+            // take some specific action ..
+            break;
+    }
 } catch (CNPExceptionInterface $e) {
     // do something
 } catch (\Exception $e) {
