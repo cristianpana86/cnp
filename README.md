@@ -92,5 +92,36 @@ OK (7 tests, 7 assertions)
 
 ```
 
+# Calitatea codului
+
+Pentru a verifica calidatii codului paote fi folosita comanda:
+```
+composer lint
+```
+
+Aplicatiile folosite in detaliu:
+1. PHP CS Fixer - verifica aderarea la coding stand (si repara automat abaterile)
+    ```
+    composer cs-fix
+    composer cs-test
+    ```
+1. PHP CodeSniffer - partial redundant cu PHP CS Fixer, incare niste verificari care ne sunt utile.
+    ```
+    composer phpcs
+    ```
+1. PHP Mess Detector - pentru analiza calitatii codului din punct de vedere al volumului, calitatii, etc.
+    ```
+    composer phpmd
+    ```
+1. PHPStan - analiza statica, identificarea problemelor generale din cod
+    ```
+    composer phpstan
+    ```
+1. PHPUnit - testare functinala si unitara
+    ```
+    composer test
+    ```
+    Aici ar trebui sa il actualizam macar la versiunea 8 daca nu chiar 9 (10 va fi lansat curand) pentru ca versiunea 7 nu mai este suporta.
+
 # Licenta
 Acest pachet este licențiat în conformitate cu licenta [MIT](http://opensource.org/licenses/MIT).
