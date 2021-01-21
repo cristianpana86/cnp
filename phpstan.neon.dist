@@ -1,0 +1,9 @@
+parameters:
+	level: 8
+#	paths:
+#		- src
+#		- tests
+#	bootstrapFiles:
+#	    - bin/.phpunit/phpunit-8.3-0/vendor/autoload.php
+	doctrine:
+		repositoryClass: Doctrine\Persistence\ObjectRepository
