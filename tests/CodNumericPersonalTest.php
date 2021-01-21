@@ -1,33 +1,34 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /**
  * @author: Cristian Pana
  * Date: 20.01.2021
  */
 
-use CPANA\CNP\Exception\CNPExceptionInterface;
-use CPANA\CNP\Exception\InvalidCNPLengthCNPException;
-use CPANA\CNP\Exception\GenericInvalidCNPException;
-use CPANA\CNP\Exception\NonNumericValueCNPException;
-use PHPUnit\Framework\TestCase;
-
+namespace CPANA\Test;
 
 use CPANA\CNP\CodNumericPersonal;
+use CPANA\CNP\Exception\InvalidCNPLengthCNPException;
+use PHPUnit\Framework\TestCase;
 
-class CodNumericPersonalTest extends TestCase
+/**
+ * @internal
+ * @coversNothing
+ */
+final class CodNumericPersonalTest extends TestCase
 {
     protected $invalidCNPLength = '180030303000';
 
-    protected $invalidCNPNonNumeric = "180030303000a";
+    protected $invalidCNPNonNumeric = '180030303000a';
 
-    protected $validCNP = "6110111015477";
-
-
+    protected $validCNP = '6110111015477';
 
     public function testGetGender(): void
     {
         $cnpObj = new CodNumericPersonal($this->validCNP);
 
-        $this->assertEquals(
+        static::assertSame(
             CodNumericPersonal::FEMALE,
             $cnpObj->getGender()
         );
@@ -37,7 +38,7 @@ class CodNumericPersonalTest extends TestCase
     {
         $cnpObj = new CodNumericPersonal($this->validCNP);
 
-        $this->assertEquals(
+        static::assertSame(
             2011,
             $cnpObj->getYear()
         );
@@ -47,7 +48,7 @@ class CodNumericPersonalTest extends TestCase
     {
         $cnpObj = new CodNumericPersonal($this->validCNP);
 
-        $this->assertEquals(
+        static::assertSame(
             1,
             $cnpObj->getMonth()
         );
@@ -57,7 +58,7 @@ class CodNumericPersonalTest extends TestCase
     {
         $cnpObj = new CodNumericPersonal($this->validCNP);
 
-        $this->assertEquals(
+        static::assertSame(
             11,
             $cnpObj->getDay()
         );
@@ -67,7 +68,7 @@ class CodNumericPersonalTest extends TestCase
     {
         $cnpObj = new CodNumericPersonal($this->validCNP);
 
-        $this->assertEquals(
+        static::assertSame(
             'Alba',
             $cnpObj->getCounty()
         );
@@ -77,14 +78,13 @@ class CodNumericPersonalTest extends TestCase
     {
         $this->expectException(InvalidCNPLengthCNPException::class);
 
-        $cnpObj = new CodNumericPersonal($this->invalidCNPLength);
+        new CodNumericPersonal($this->invalidCNPLength);
     }
 
     public function testNumeric(): void
     {
         $this->expectException(\CPANA\CNP\Exception\NonNumericValueCNPException::class);
 
-        $cnpObj = new CodNumericPersonal($this->invalidCNPNonNumeric);
+        new CodNumericPersonal($this->invalidCNPNonNumeric);
     }
-
 }

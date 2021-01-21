@@ -94,7 +94,7 @@ OK (7 tests, 7 assertions)
 
 # Calitatea codului
 
-Pentru a verifica calidatii codului paote fi folosita comanda:
+Pentru a verifica calitatea codului poate fi folosita comanda:
 ```
 composer lint
 ```
@@ -121,7 +121,6 @@ Aplicatiile folosite in detaliu:
     ```
     composer test
     ```
-    Aici ar trebui sa il actualizam macar la versiunea 8 daca nu chiar 9 (10 va fi lansat curand) pentru ca versiunea 7 nu mai este suporta.
 
 # Licenta
 Acest pachet este licențiat în conformitate cu licenta [MIT](http://opensource.org/licenses/MIT).
